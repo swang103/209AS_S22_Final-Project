@@ -68,7 +68,7 @@ crashlytics-build.properties
 
 # Packed Addressables
 [Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
-[Aa]ssets/[Oo]culus/**
+#[Aa]ssets/[Oo]culus/**
 
 *BackUpThisFolder*/**
 
