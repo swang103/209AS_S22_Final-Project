@@ -10,7 +10,7 @@ import os
 import threading
 
 username='kasa@luciochen.com'
-os.environ['KASA_PASSWORD']=""
+os.environ['KASA_PASSWORD']="Kasa!990412"
 password=os.getenv('KASA_PASSWORD')
 
 device_manager = TPLinkDeviceManager(username, password)
@@ -24,6 +24,7 @@ PORT = 10001  # Port to listen on (non-privileged ports are > 1023)
 lamp1 = False
 future_lamp1 = False
 kasa_lamp1 = 0
+
 lamp2 = False
 future_lamp2 = False
 kasa_lamp2 = 0
@@ -58,6 +59,7 @@ async def lampState():
         my_dict = json.loads(my_dict)
         print(my_dict['relay_state'])
         lamp1 = my_dict['relay_state']
+        future_lamp1 = lamp1
     else:  
         print(f'Could not find {device_name1}')
     
@@ -72,6 +74,7 @@ async def lampState():
         my_dict = json.loads(my_dict)
         print(my_dict['relay_state'])
         lamp2 = my_dict['relay_state']
+        future_lamp2 = lamp2
     else:  
         print(f'Could not find {device_name2}')
 
